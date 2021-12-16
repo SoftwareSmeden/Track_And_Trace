@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tat.Controller.LabelController">
+   <children>
+      <AnchorPane prefHeight="625.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="87.0" fitWidth="85.0" layoutX="365.0" layoutY="234.0">
+               <image>
+                  <Image url="@../../icons/PakkeLabel_Scene/qr-code.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="43.0" layoutY="45.0" prefHeight="15.0" prefWidth="30.0" text="Fra:" />
+            <Label fx:id="virkNavn" layoutX="43.0" layoutY="57.0" prefHeight="25.0" prefWidth="200.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="virkAdresse" layoutX="44.0" layoutY="79.0" prefHeight="15.0" prefWidth="200.0" />
+            <Label fx:id="virkPostBy" layoutX="45.0" layoutY="92.0" prefHeight="20.0" prefWidth="200.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="virkTelefon" layoutX="45.0" layoutY="107.0" prefHeight="20.0" prefWidth="200.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="45.0" layoutY="113.0" prefHeight="17.0" prefWidth="418.0" text="_________________________________________________________________________________" />
+            <ImageView fitHeight="38.0" fitWidth="140.0" layoutX="311.0" layoutY="42.0">
+               <image>
+                  <Image url="@../../icons/PakkeLabel_Scene/GLS_logo.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="dato" layoutX="370.0" layoutY="110.0" prefHeight="15.0" prefWidth="80.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="mtNavn" layoutX="45.0" layoutY="137.0" prefWidth="200.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="mtAdresse" layoutX="45.0" layoutY="159.0" prefWidth="200.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="mtPostBy" layoutX="45.0" layoutY="179.0" prefWidth="200.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="mtTelefon" layoutX="46.0" layoutY="199.0" prefWidth="200.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="316.0" prefHeight="17.0" prefWidth="418.0" text="_________________________________________________________________________________" />
+            <ImageView fitHeight="131.0" fitWidth="146.0" layoutX="42.0" layoutY="339.0">
+               <image>
+                  <Image url="@../../icons/PakkeLabel_Scene/barcode-product.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="173.0" layoutX="41.0" layoutY="473.0">
+               <image>
+                  <Image url="@../../icons/PakkeLabel_Scene/barcode.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="71.0" layoutY="312.0" text="Antal 1/1" />
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="41.0" layoutY="291.0">
+               <image>
+                  <Image url="@../../icons/PakkeLabel_Scene/man-carrying-package.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="41.0" layoutY="527.0" text="Forsendelses ID: " />
+            <Button fx:id="printKnap" layoutX="428.0" layoutY="575.0" mnemonicParsing="false" text="Print" />
+            <Label fx:id="forsendelsesID" layoutX="131.0" layoutY="527.0" prefHeight="17.0" prefWidth="173.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
