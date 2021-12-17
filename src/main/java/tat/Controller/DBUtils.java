@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import tat.Skabeloner.PakkeLabel;
 import java.io.*;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 public class DBUtils {
 
     private final String URL = "jdbc:sqlite:E://IntelliJ Projects/TrackAndTrace/src/main/java/database/TATDB.db";
+    private ArrayList<PakkeLabel> liste = new ArrayList<>();
 
     public void skiftScene(ActionEvent event, String fxmlFile) {
         Parent root = null;
@@ -36,15 +38,14 @@ public class DBUtils {
             try {
                 FXMLLoader loader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
                 root = loader.load();
-                //Overfør liste information til næste scene
+                //Overfør listens information til næste scene
                 if(controllerValg == 1){
                     LabelController lc = loader.getController();
                     lc.visPakkeLabel(list);
                     lc.printKnap(list);
-                }  else if(controllerValg == 2){
+                } else if(controllerValg == 2){
                     KundeController kc = loader.getController();
                     kc.pakkeInfo(list);
-                    System.out.println(list.get(0));
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -58,7 +59,8 @@ public class DBUtils {
     }
 
 
-    public void login(ActionEvent event, String ID, int valg) throws SQLException {
+    public String login(ActionEvent event, String ID, int valg) throws SQLException {
+        String status = "";
         if (valg == 1) {
             String sql = "SELECT * FROM Virksomhed WHERE MedarbID = ?";
             Connection conn = DriverManager.getConnection(URL);
@@ -67,10 +69,14 @@ public class DBUtils {
             ResultSet rs = preStmt.executeQuery();
             if (rs.next()) {
                 skiftScene(event,"Opret_Label_Scene.fxml");
+            }else{
+                status = "Medarbejder nummer findes ikke";
             }
             conn.close();
             preStmt.close();
             rs.close();
+
+
         } else if (valg == 2) {
             String sql = "SELECT * FROM Lokation WHERE TatID = ?";
             Connection conn = DriverManager.getConnection(URL);
@@ -78,7 +84,6 @@ public class DBUtils {
             preStmt.setString(1, ID);
             ResultSet rs = preStmt.executeQuery();
             if (rs.next()) {
-                ArrayList<PakkeLabel> liste = new ArrayList<>();
                 String sqlPrint = "SELECT * FROM Lokation WHERE TatID =  "+ID+"";
                 Statement stmt = conn.createStatement();
                 ResultSet resSet = stmt.executeQuery(sqlPrint);
@@ -97,7 +102,7 @@ public class DBUtils {
             preStmt.close();
             rs.close();
 
-        } else if (valg == 3) {
+        } else if (valg == 3) { //TODO Skal måske slettes...
             String sql = "SELECT * FROM ReTab WHERE TATID = ?";
             Connection conn = DriverManager.getConnection(URL);
             PreparedStatement preStmt = conn.prepareStatement(sql);
@@ -110,6 +115,7 @@ public class DBUtils {
             preStmt.close();
             rs.close();
         }
+        return status;
     }
 
     public void labelTabelDB(ActionEvent event, String afFirmanavn, String afAdresse, String afPostnummer, String afBy, String afTelefon, String afCVR, String mtFornavn, String mtEfternavn, String mtAdresse, String mtPostnummer, String mtBy, String mtMobil, String mtEmail, String fragt) throws IOException {
@@ -132,7 +138,6 @@ public class DBUtils {
         }
 
         PakkeLabel pl = new PakkeLabel();
-        pl.getPl().clear();
         pl.getVirk().setFirmanavn(afFirmanavn);
         pl.getVirk().setAdresse(afAdresse);
         pl.getVirk().setPostnummer(afPostnummer);
@@ -147,7 +152,42 @@ public class DBUtils {
         pl.getModt().setBy(mtBy);
         pl.getModt().setTelefonNr(mtMobil);
         pl.getModt().setEmail(mtEmail);
-        pl.getPl().add(pl);
-        skiftSceneListe(event, "PakkeLabel_Scene.fxml", pl.getPl(),1);
+        liste.add(pl);
+        skiftSceneListe(event, "PakkeLabel_Scene.fxml", liste,1);
+    }
+
+    public String flytPakke(String tatId, String lokation){
+        String sqlCheckAll = "SELECT * FROM Lokation WHERE TatID = ? AND Adresse = ?";
+        String sqlCheckID = "SELECT * FROM Lokation WHERE TatID = ?";
+        String sqlIndsaet = "INSERT INTO Lokation (TatID, Adresse, Dato, Tid) VALUES ('"+tatId+"','"+lokation+"', strftime('%d/%m/%Y','now'), time('now', 'localtime'))";
+        String pakkeStatus = "";
+        try {
+            Connection conn = DriverManager.getConnection(URL);
+            PreparedStatement preStmt = conn.prepareStatement(sqlCheckAll);
+            preStmt.setString(1, tatId);
+            preStmt.setString(2, lokation);
+            ResultSet rs = preStmt.executeQuery();
+            if (!rs.next()) {
+                PreparedStatement preStmtCheck = conn.prepareStatement(sqlCheckID);
+                preStmtCheck.setString(1, tatId);
+                ResultSet rsCheck = preStmtCheck.executeQuery();
+                if (rsCheck.next()) {
+                    Statement stmt = conn.createStatement();
+                    stmt.execute(sqlIndsaet);
+                    stmt.close();
+                    pakkeStatus = "Pakken er flyttet";
+                }else{
+                    pakkeStatus = "Track and trace id findes ikke";
+                }
+            }else{
+                pakkeStatus = "Pakke og lokation findes allerede i systemet";
+            }
+            conn.close();
+            preStmt.close();
+            rs.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return pakkeStatus;
     }
 }

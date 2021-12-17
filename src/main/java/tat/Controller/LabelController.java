@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import tat.Skabeloner.PakkeLabel;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -56,11 +58,13 @@ public class LabelController {
 
     //PakkeLabel
     @FXML
-    private Label virkNavn, virkAdresse, virkPostBy, virkTelefon, dato, mtNavn, mtAdresse, mtPostBy, mtTelefon, forsendelsesID;
+    private Label virkNavn, virkAdresse, virkPostBy, virkTelefon, dato, mtNavn, mtAdresse, mtPostBy, mtTelefon, forsendelsesID, stregkode;
     @FXML
     private Button printKnap;
-    private final LocalDate localDate = LocalDate.now();
+    @FXML
+    private ImageView glsLogo, postnordLogo, afhentLogo;
 
+    private final LocalDate localDate = LocalDate.now();
     private DBUtils dbUtils = new DBUtils();
     private PakkeLabel pl = new PakkeLabel();
     private Random ran = new Random();
@@ -130,17 +134,26 @@ public class LabelController {
     }
 
     //PakkeLabel Scene
-    public void visPakkeLabel(ArrayList<PakkeLabel> list){
+    public void visPakkeLabel(ArrayList<PakkeLabel> liste){
         int forSendLabelID = ran.nextInt(165145454) + 565664613;
-        virkNavn.setText(list.get(0).getVirk().getFirmanavn());
-        virkAdresse.setText(list.get(0).getVirk().getAdresse());
-        virkPostBy.setText(list.get(0).getVirk().getPostnummer() + " " + list.get(0).getVirk().getBy());
-        virkTelefon.setText("Telefon: " + list.get(0).getVirk().getTelefonNr());
+        int stregkodeID = ran.nextInt(91231233) + 565664613;
+        if (liste.get(0).getFragt().equals("GLS")){
+            glsLogo.setVisible(true);
+        }else if (liste.get(0).getFragt().equals("Postnord")){
+            postnordLogo.setVisible(true);
+        }else if (liste.get(0).getFragt().equals("Afhentning")){
+            afhentLogo.setVisible(true);
+        }
+        virkNavn.setText(liste.get(0).getVirk().getFirmanavn());
+        virkAdresse.setText(liste.get(0).getVirk().getAdresse());
+        virkPostBy.setText(liste.get(0).getVirk().getPostnummer() + " " + liste.get(0).getVirk().getBy());
+        virkTelefon.setText("Telefon: " + liste.get(0).getVirk().getTelefonNr());
         dato.setText("Dato: " + localDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
-        mtNavn.setText(list.get(0).getModt().getFornavn() + " " + list.get(0).getModt().getEfternavn());
-        mtAdresse.setText(list.get(0).getModt().getAdresse());
-        mtPostBy.setText(list.get(0).getModt().getPostNr() + " " + list.get(0).getModt().getBy());
-        mtTelefon.setText(list.get(0).getModt().getTelefonNr());
+        mtNavn.setText(liste.get(0).getModt().getFornavn() + " " + liste.get(0).getModt().getEfternavn());
+        mtAdresse.setText(liste.get(0).getModt().getAdresse());
+        mtPostBy.setText(liste.get(0).getModt().getPostNr() + " " + liste.get(0).getModt().getBy());
+        mtTelefon.setText(liste.get(0).getModt().getTelefonNr());
         forsendelsesID.setText(String.valueOf(forSendLabelID));
+        stregkode.setText(String.valueOf(stregkodeID));
     }
 }

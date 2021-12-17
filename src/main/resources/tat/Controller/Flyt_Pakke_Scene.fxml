@@ -2,21 +2,44 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tat.Controller.FlytPakkeController">
     <children>
         <AnchorPane prefHeight="625.0" prefWidth="500.0">
             <children>
-                <Label layoutX="150.0" layoutY="181.0" prefHeight="17.0" prefWidth="200.0" text="Indtast track and trace nummer" />
-                <TextField fx:id="trackAndTraceNr" layoutX="150.0" layoutY="222.0" prefWidth="200.0" promptText="Track and trace nummer" />
-                <Button fx:id="flytPakkeKnap" layoutX="211.0" layoutY="476.0" mnemonicParsing="false" text="Flyt pakken" />
+                <Label layoutX="89.0" layoutY="200.0" prefHeight="17.0" prefWidth="200.0" text="Indtast track and trace nummer">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+                <TextField fx:id="trackAndTraceNr" layoutX="89.0" layoutY="225.0" prefWidth="200.0" promptText="Track and trace nummer" />
+                <Button fx:id="flytPakkeKnap" layoutX="212.0" layoutY="466.0" mnemonicParsing="false" onAction="#flytPakkeKnap" text="Flyt pakken" />
                 <Button fx:id="tilbageKnap" layoutX="412.0" layoutY="573.0" mnemonicParsing="false" onAction="#tilbageKnap" text="Tilbage" />
-            <Label fx:id="findesIkke" alignment="CENTER" layoutX="150.0" layoutY="432.0" prefHeight="20.0" prefWidth="200.0" textFill="RED" />
-            <TextField fx:id="indtastLokation" layoutX="150.0" layoutY="313.0" prefWidth="200.0" promptText="Lokation" />
-            <Label layoutX="149.0" layoutY="270.0" prefHeight="17.0" prefWidth="200.0" text="Indtast lokation" />
+            <Label fx:id="pakkeStatus" alignment="CENTER" layoutX="78.0" layoutY="424.0" prefHeight="20.0" prefWidth="344.0" />
+            <Label layoutX="94.0" layoutY="298.0" prefHeight="17.0" prefWidth="241.0" text="Flyt Pakke Lokationer">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="postcentral_1" layoutX="94.0" layoutY="328.0" mnemonicParsing="false" selected="true" text="Postcentral 1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="flyt" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="postcentral_2" layoutX="94.0" layoutY="371.0" mnemonicParsing="false" text="Postcentral 2" toggleGroup="$flyt" />
+            <RadioButton fx:id="postcentral_3" layoutX="222.0" layoutY="328.0" mnemonicParsing="false" text="Postcentral 3" toggleGroup="$flyt" />
+            <RadioButton fx:id="paaLastbil" layoutX="222.0" layoutY="371.0" mnemonicParsing="false" text="På Lastbil" toggleGroup="$flyt" />
+            <RadioButton fx:id="leveret" layoutX="358.0" layoutY="328.0" mnemonicParsing="false" text="Leveret" toggleGroup="$flyt" />
+            <Label alignment="CENTER" layoutX="60.0" layoutY="64.0" prefHeight="51.0" prefWidth="379.0" text="FLYT PAKKE SIMULATOR">
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </children>

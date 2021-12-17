@@ -22,12 +22,12 @@ public class MedarbejderController {
     public void loginKnap(ActionEvent event){
         if (!(medarbejderNr.getText().trim().isEmpty())){
             try {
-                dbUtils.login(event, medarbejderNr.getText(),1);
+                forkertLogin.setText(dbUtils.login(event, medarbejderNr.getText(),1));
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }else{
-            forkertLogin.setText("Medarbejder nummer findes ikke");
+            forkertLogin.setText("Udfyld feltet");
         }
     }
 }

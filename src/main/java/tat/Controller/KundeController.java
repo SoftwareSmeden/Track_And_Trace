@@ -18,7 +18,7 @@ public class KundeController {
 
     //KundePakkeInfoScene
     @FXML
-    private Label pakkeStart, mellemstation1, mellemstation2, mellemstation3, pakkePaaVej, pakkeLeveret;
+    private Label pakkeStatus_1, pakkeStatus_2, pakkeStatus_3, pakkeStatus_4, pakkeStatus_5, pakkeStatus_6, pakkeStatus_7, pakkeStatus_8, pakkeStatus_9, pakkeStatus_10, pakkeStatus_11, pakkeStatus_12;
     private DBUtils dbUtils = new DBUtils();
 
     public void tilbageKnap(ActionEvent event){
@@ -29,7 +29,7 @@ public class KundeController {
         if (!(tatNr.getText().trim().isEmpty())){
             try {
                 dbUtils.login(event,tatNr.getText(),2);
-                forkertIndtastning.setText("Pakken findes ikke");
+                forkertIndtastning.setText("Track and trace id findes ikke");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -42,10 +42,13 @@ public class KundeController {
         dbUtils.skiftScene(event,"Kunde_Login_Scene.fxml");
     }
 
+    //Kunde_PakkeInfo_Scene
     public void pakkeInfo(ArrayList<PakkeLabel> liste){
-        Label[] labels = {pakkeStart, mellemstation1, mellemstation2, mellemstation3, pakkePaaVej, pakkeLeveret};
+        Label[] labelsVenstreSide = {pakkeStatus_1, pakkeStatus_2, pakkeStatus_3, pakkeStatus_4, pakkeStatus_5, pakkeStatus_6};
+        Label[] labelsHoejreSide = {pakkeStatus_7, pakkeStatus_8, pakkeStatus_9, pakkeStatus_10, pakkeStatus_11, pakkeStatus_12};
         for (int i = 0; i < liste.size(); i++) {
-            labels[i].setText(liste.get(i).getTi().toString());
+            labelsVenstreSide[i].setText(liste.get(i).getTi().getAdresse());
+            labelsHoejreSide[i].setText(liste.get(i).getTi().getDato() + " " + liste.get(i).getTi().getTid());
         }
     }
 }

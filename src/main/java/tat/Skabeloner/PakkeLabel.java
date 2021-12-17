@@ -12,19 +12,16 @@ public class PakkeLabel {
     private Virksomhed virk = new Virksomhed();
     private TransportInfo ti = new TransportInfo();
     private Modtager modt = new Modtager();
-    private ArrayList<PakkeLabel> pl = new ArrayList<>();
     private LocalDate localDate = LocalDate.now();
 
     public PakkeLabel() {
     }
 
-
-    public PakkeLabel(String fragt, Virksomhed virk, Modtager modt, TransportInfo ti, ArrayList<PakkeLabel> pl) {
+    public PakkeLabel(String fragt, Virksomhed virk, Modtager modt, TransportInfo ti) {
         this.fragt = fragt;
         this.virk = virk;
         this.modt = modt;
         this.ti = ti;
-        this.pl = pl;
     }
 
     @Override
@@ -122,11 +119,12 @@ public class PakkeLabel {
         this.ti = ti;
     }
 
-    public ArrayList<PakkeLabel> getPl() {
-        return pl;
+    public LocalDate getLocalDate() {
+        return localDate;
     }
 
-    public void setPl(ArrayList<PakkeLabel> pl) {
-        this.pl = pl;
+    public void setLocalDate(LocalDate localDate) {
+        this.localDate = localDate;
     }
+
 }
