@@ -47,6 +47,18 @@ Vores Domæne model til track and trace systemet.
 <img width="425" alt="Domæne Model" src="https://user-images.githubusercontent.com/89922905/146827069-0bf8f6d5-ab93-4e46-ad01-2bca9c15107c.png">
   
 <details close>
+    
+<details close>
+<summary>System Sekvensdiagram</summary>
+<br>  
+  
+System sekvensdiagrammer for alle tre aktører.  
+  
+![SSD Medarbejder](https://user-images.githubusercontent.com/89922905/146827841-26ab9fdc-9775-4566-a3e4-ea718433e85c.png)
+![SSD Kunde](https://user-images.githubusercontent.com/89922905/146827860-d38885e7-6f05-40d9-bbf7-5bbd59b35ad8.png)
+![SSD Flyt Pakke](https://user-images.githubusercontent.com/89922905/146827873-d69a74b1-031d-41ee-8852-b3221b99b244.png)  
+  
+<details close>  
 
 - *SoftwareSmeden* -> [Profile](https://github.com/SoftwareSmeden "SoftwareSmeden")
 - *Fisk810* -> [Profile](https://github.com/fisk810 "Fisk810")
