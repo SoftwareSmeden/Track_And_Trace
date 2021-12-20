@@ -27,7 +27,7 @@ Denne use-case er for kunden, hvor til de kan søge efter deres pakke med et tra
 </details>
 
 <details close>
-<summary>Use-Case 2 - Kunde</summary>
+<summary>Use-Case 3 - Flyt Pakke Simulator</summary>
 <br>
  
 Denne use-case er til simulering af én pakke kan flyttes til en ny lokation.  
