@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import Domaene.DB.DBUtils;
-
 import java.sql.SQLException;
 
 public class Medarbejder {

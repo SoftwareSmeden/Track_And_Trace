@@ -9,6 +9,12 @@ public class TransportInfo {
     public TransportInfo() {
     }
 
+    public TransportInfo(String adresse, String dato, String tid) {
+        this.adresse = adresse;
+        this.dato = dato;
+        this.tid = tid;
+    }
+
     @Override
     public String toString() {
         return adresse + " " + dato + " " + tid;

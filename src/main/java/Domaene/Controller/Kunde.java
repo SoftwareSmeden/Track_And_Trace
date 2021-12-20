@@ -44,7 +44,7 @@ public class Kunde {
         skift.skiftScene(event,"Kunde_Login_Scene.fxml");
     }
 
-    //Kunde_PakkeInfo_Scene
+    //Kunde pakke-info Scene
     public void pakkeInfo(ArrayList<PakkeLabel> liste){
         Label[] labelsVenstreSide = {pakkeStatus_1, pakkeStatus_2, pakkeStatus_3, pakkeStatus_4, pakkeStatus_5, pakkeStatus_6};
         Label[] labelsHoejreSide = {pakkeStatus_7, pakkeStatus_8, pakkeStatus_9, pakkeStatus_10, pakkeStatus_11, pakkeStatus_12};

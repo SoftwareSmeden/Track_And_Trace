@@ -103,7 +103,7 @@ public class Label {
         }
         if (!(afsenderFirmanavn.getText().trim().isEmpty() || afsenderAdresse.getText().trim().isEmpty() || afsenderPostnummer.getText().trim().isEmpty())){
             if (tjekTal(afsenderPostnummer.getText(), 4)){
-                if(!(afsenderBy.getText().trim().isEmpty() || afsenderTelefon.getText().trim().isEmpty()|| afsenderTelefon.getText().trim().isEmpty())){
+                if(!(afsenderBy.getText().trim().isEmpty() || afsenderTelefon.getText().trim().isEmpty())){
                     if(tjekTal(afsenderTelefon.getText(), 8)){
                         if(!afsenderCVR.getText().trim().isEmpty()){
                             if(tjekTal(afsenderCVR.getText(),10)){
@@ -137,70 +137,87 @@ public class Label {
                                                                                 forkertIndtastning.setText("");
                                                                                 infoTekst.setText("Label oprettet");
                                                                             }else{
+                                                                                //Tjekker om email er gyldig
                                                                                 tjekStatus = "Ugyldig email";
                                                                                 forkertIndtastning.setText(tjekStatus);
                                                                             }
                                                                         }else{
-                                                                            tjekStatus = "Udfyld alle felter";
+                                                                            //Tjekker om feltet er tomt
+                                                                            tjekStatus = "Udfyld email";
                                                                             forkertIndtastning.setText(tjekStatus);
                                                                         }
                                                                     }else{
+                                                                        //Tjekker mobil for ugyldige tegn
                                                                         tjekStatus = "Mobilnummer må ikke indeholde bogstaver";
                                                                         forkertIndtastning.setText(tjekStatus);
                                                                     }
                                                                 }else{
-                                                                    tjekStatus = "Udfyld alle felter";
+                                                                    //Tjekker om feltet er tomt
+                                                                    tjekStatus = "Udfyld mobil";
                                                                     forkertIndtastning.setText(tjekStatus);
                                                                 }
                                                             }else{
+                                                                //Tjekker feltet for ugyldige tegn
                                                                 tjekStatus = "By må ikke indeholde tal";
                                                                 forkertIndtastning.setText(tjekStatus);
                                                             }
                                                         }else{
-                                                            tjekStatus = "Udfyld alle felter";
+                                                            //Tjekker om feltet er tomt
+                                                            tjekStatus = "Udfyld by";
                                                             forkertIndtastning.setText(tjekStatus);
                                                         }
                                                     }else{
+                                                        //Tjekker postnummer for ugyldige tegn
                                                         tjekStatus = "Postnummer må ikke indeholde bogstaver";
                                                         forkertIndtastning.setText(tjekStatus);
                                                     }
                                                 }else {
+                                                    //Tjekker for tomme felter
                                                     tjekStatus = "Udfyld alle felter";
                                                     forkertIndtastning.setText(tjekStatus);
                                                 }
                                             }else{
+                                                //Tjekker efternavn for ugyldige tegn
                                                 tjekStatus = "Efternavn må ikke indeholde tal";
                                                 forkertIndtastning.setText(tjekStatus);
                                             }
                                         }else{
-                                            tjekStatus = "Udfyld alle felter";
+                                            //Tjekker om feltet er tomt
+                                            tjekStatus = "Udfyld efternavn";
                                             forkertIndtastning.setText(tjekStatus);
                                         }
                                     }else{
+                                        //Tjekker fornavn for ugyldige tegn
                                         tjekStatus = "Fornavn må ikke indeholde tal";
                                         forkertIndtastning.setText(tjekStatus);
                                     }
                                 }else{
-                                    tjekStatus = "Ugyldig indtastning";
+                                    //Tjekker om feltet er tomt
+                                    tjekStatus = "Udfyld fornavn";
                                     forkertIndtastning.setText(tjekStatus);
                                 }
                             }else{
+                                //Tjekker CVR-nr
                                 tjekStatus = "Ugyldigt CVR-nummer";
                                 forkertIndtastning.setText(tjekStatus);
                             }
                         }else{
-                            tjekStatus = "Ugyldig indtastning";
+                            //Tjekker om CVR-nr. feltet er tomt
+                            tjekStatus = "Udfyld CVR-nr";
                             forkertIndtastning.setText(tjekStatus);
                         }
                     }else{
+                        //Tjekker tlf-nr.
                         tjekStatus = "Ugyldigt telefonnummer";
                         forkertIndtastning.setText(tjekStatus);
                     }
                 }else{
-                    tjekStatus = "Ugyldigt indtastning";
+                    //Tjekker om felter er tomme
+                    tjekStatus = "Udfyld alle felter";
                     forkertIndtastning.setText(tjekStatus);
                 }
             }else{
+                //Tjekker postnummer
                 tjekStatus = "Ugyldigt postnummer";
                 forkertIndtastning.setText(tjekStatus);
             }
@@ -238,7 +255,7 @@ public class Label {
     public void printKnap(ArrayList<PakkeLabel> liste) throws IOException {
         printKnap.setOnAction(event -> {
             try {
-                System.out.println("Label printes til .txt fil"); //TODO Konsol tjek
+                System.out.println("Label skrives til .txt fil");
                 pl.opretLabel(liste);
                 skift.skiftScene(event,"Opret_Label_Scene.fxml");
             } catch (IOException e) {

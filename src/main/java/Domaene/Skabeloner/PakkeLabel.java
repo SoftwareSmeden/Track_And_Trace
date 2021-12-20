@@ -101,30 +101,9 @@ public class PakkeLabel {
         return virk;
     }
 
-    public void setVirk(Virksomhed virk) {
-        this.virk = virk;
-    }
-
     public Modtager getModt() {
         return modt;
     }
 
-    public void setModt(Modtager modt) {
-        this.modt = modt;
-    }
-
     public TransportInfo getTi() {return ti;}
-
-    public void setTi(TransportInfo ti) {
-        this.ti = ti;
-    }
-
-    public LocalDate getLocalDate() {
-        return localDate;
-    }
-
-    public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
-    }
-
 }

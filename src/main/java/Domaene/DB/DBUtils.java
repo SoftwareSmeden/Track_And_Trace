@@ -13,13 +13,13 @@ public class DBUtils {
     private SceneSkift skift = new SceneSkift();
     private ArrayList<PakkeLabel> liste = new ArrayList<>();
 
-    public String login(ActionEvent event, String ID, int valg) throws SQLException {
+    public String login(ActionEvent event, String id, int valg) throws SQLException {
         String status = "";
         if (valg == 1) {
             String sql = "SELECT * FROM Virksomhed WHERE MedarbID = ?";
             Connection conn = DriverManager.getConnection(URL);
             PreparedStatement preStmt = conn.prepareStatement(sql);
-            preStmt.setString(1, ID);
+            preStmt.setString(1, id);
             ResultSet rs = preStmt.executeQuery();
             if (rs.next()) {
                 skift.skiftScene(event,"Opret_Label_Scene.fxml");
@@ -34,10 +34,10 @@ public class DBUtils {
             String sql = "SELECT * FROM Lokation WHERE TatID = ?";
             Connection conn = DriverManager.getConnection(URL);
             PreparedStatement preStmt = conn.prepareStatement(sql);
-            preStmt.setString(1, ID);
+            preStmt.setString(1, id);
             ResultSet rs = preStmt.executeQuery();
             if (rs.next()) {
-                String sqlPrint = "SELECT * FROM Lokation WHERE TatID =  "+ID+"";
+                String sqlPrint = "SELECT * FROM Lokation WHERE TatID =  "+id+"";
                 Statement stmt = conn.createStatement();
                 ResultSet resSet = stmt.executeQuery(sqlPrint);
                 while(resSet.next()){
@@ -54,23 +54,11 @@ public class DBUtils {
             conn.close();
             preStmt.close();
             rs.close();
-
-        } else if (valg == 3) { //TODO Skal måske slettes...
-            String sql = "SELECT * FROM ReTab WHERE TATID = ?";
-            Connection conn = DriverManager.getConnection(URL);
-            PreparedStatement preStmt = conn.prepareStatement(sql);
-            preStmt.setString(1, ID);
-            ResultSet rs = preStmt.executeQuery();
-            if (rs.next()) {
-                skift.skiftScene(event,"OpdaterScene.fxml");
-            }
-            conn.close();
-            preStmt.close();
-            rs.close();
         }
         return status;
     }
 
+    //Der skrives til databasen samtidig med at der oprettes en liste, som sendes videre til en ny scene.
     public void labelTabelDB(ActionEvent event, String afFirmanavn, String afAdresse, String afPostnummer, String afBy, String afTelefon, String afCVR, String mtFornavn, String mtEfternavn, String mtAdresse, String mtPostnummer, String mtBy, String mtMobil, String mtEmail, String fragt) throws IOException {
         String sqlLabel = "INSERT INTO Label (Af_Firmanavn, Af_Adresse, Af_Postnummer, Af_By, Af_Telefon, Af_CVR, Fragt, Mt_Fornavn, Mt_Efternavn, Mt_Adresse, Mt_Postnummer, Mt_By, Mt_Telefon, Mt_Email) VALUES ('"+afFirmanavn+"','"+afAdresse+"','"+afPostnummer+"','"+afBy+"','"+afTelefon+"','"+afCVR+"','"+fragt+"','"+mtFornavn+"','"+mtEfternavn+"','"+mtAdresse+"','"+mtPostnummer+"','"+mtBy+"','"+mtMobil+"','"+mtEmail+"')";
         String sqlTatID = "INSERT INTO Lokation (TatID) SELECT (TatID) FROM Label ORDER BY TatID DESC LIMIT 1";
@@ -89,6 +77,7 @@ public class DBUtils {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
         PakkeLabel pl = new PakkeLabel();
         pl.getVirk().setFirmanavn(afFirmanavn);
         pl.getVirk().setAdresse(afAdresse);
@@ -108,6 +97,7 @@ public class DBUtils {
         skift.skiftSceneListe(event, "PakkeLabel_Scene.fxml", liste,1);
     }
 
+    // Flyt pakke simulator funktionen
     public String flytPakke(String tatId, String lokation){
         String sqlCheckAll = "SELECT * FROM Lokation WHERE TatID = ? AND Adresse = ?";
         String sqlCheckID = "SELECT * FROM Lokation WHERE TatID = ?";

@@ -1,11 +1,9 @@
 package Domaene.Controller;
 
 import javafx.event.ActionEvent;
-import Domaene.DB.DBUtils;
 
 public class Menu {
 
-    private DBUtils dbUtils = new DBUtils();
     private SceneSkift skift = new SceneSkift();
 
     public void virksomhedKnap(ActionEvent event){
