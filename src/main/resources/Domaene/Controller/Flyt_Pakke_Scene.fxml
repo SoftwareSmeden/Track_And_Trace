@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -13,33 +16,65 @@
     <children>
         <AnchorPane prefHeight="625.0" prefWidth="500.0">
             <children>
+            <ImageView fitHeight="625.0" fitWidth="500.0">
+               <image>
+                  <Image url="@../../Icons/Flyt_Pakke_Scene/Background.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="131.0" fitWidth="132.0" layoutX="38.0" layoutY="434.0" opacity="0.1">
+               <image>
+                  <Image url="@../../Icons/Flyt_Pakke_Scene/position.png" />
+               </image>
+            </ImageView>
                 <Label layoutX="89.0" layoutY="200.0" prefHeight="17.0" prefWidth="200.0" text="Indtast track and trace nummer">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
-                <TextField fx:id="trackAndTraceNr" layoutX="89.0" layoutY="225.0" prefWidth="200.0" promptText="Track and trace nummer" />
-                <Button fx:id="flytPakkeKnap" layoutX="212.0" layoutY="466.0" mnemonicParsing="false" onAction="#flytPakkeKnap" text="Flyt pakken" />
-                <Button fx:id="tilbageKnap" layoutX="412.0" layoutY="573.0" mnemonicParsing="false" onAction="#tilbageKnap" text="Tilbage" />
+                <TextField fx:id="trackAndTraceNr" layoutX="89.0" layoutY="225.0" prefWidth="200.0" promptText="Track and trace nummer" style="-fx-focus-color: limegreen;" />
+                <Button fx:id="flytPakkeKnap" layoutX="181.0" layoutY="466.0" mnemonicParsing="false" onAction="#flytPakkeKnap" prefHeight="25.0" prefWidth="132.0" style="-fx-background-radius: 10; -fx-body-color: linear-gradient(to bottom right, #FFFFFF, #696969); -fx-focus-color: limegreen;" text="Flyt pakken">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+                <Button fx:id="tilbageKnap" layoutX="412.0" layoutY="573.0" mnemonicParsing="false" onAction="#tilbageKnap" style="-fx-focus-color: limegreen; -fx-body-color: linear-gradient(to bottom right, #FFFFFF, #696969); -fx-background-radius: 10;" text="Tilbage">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
             <Label fx:id="pakkeStatus" alignment="CENTER" layoutX="78.0" layoutY="424.0" prefHeight="20.0" prefWidth="344.0" />
             <Label layoutX="94.0" layoutY="298.0" prefHeight="17.0" prefWidth="241.0" text="Flyt Pakke Lokationer">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <RadioButton fx:id="postcentral_1" layoutX="94.0" layoutY="328.0" mnemonicParsing="false" selected="true" text="Postcentral 1">
+            <RadioButton fx:id="postcentral_1" layoutX="94.0" layoutY="328.0" mnemonicParsing="false" selected="true" style="-fx-focus-color: red;" text="Postcentral 1">
                <toggleGroup>
                   <ToggleGroup fx:id="flyt" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="postcentral_2" layoutX="94.0" layoutY="371.0" mnemonicParsing="false" text="Postcentral 2" toggleGroup="$flyt" />
-            <RadioButton fx:id="postcentral_3" layoutX="222.0" layoutY="328.0" mnemonicParsing="false" text="Postcentral 3" toggleGroup="$flyt" />
+            <RadioButton fx:id="postcentral_2" layoutX="94.0" layoutY="371.0" mnemonicParsing="false" style="-fx-focus-color: red;" text="Postcentral 2" toggleGroup="$flyt" />
+            <RadioButton fx:id="postcentral_3" layoutX="222.0" layoutY="328.0" mnemonicParsing="false" style="-fx-focus-color: red;" text="Postcentral 3" toggleGroup="$flyt" />
             <RadioButton fx:id="paaLastbil" layoutX="222.0" layoutY="371.0" mnemonicParsing="false" text="På Lastbil" toggleGroup="$flyt" />
-            <RadioButton fx:id="leveret" layoutX="358.0" layoutY="328.0" mnemonicParsing="false" text="Leveret" toggleGroup="$flyt" />
-            <Label alignment="CENTER" layoutX="60.0" layoutY="64.0" prefHeight="51.0" prefWidth="379.0" text="FLYT PAKKE SIMULATOR">
+            <RadioButton fx:id="leveret" layoutX="358.0" layoutY="328.0" mnemonicParsing="false" style="-fx-focus-color: green;" text="Leveret" toggleGroup="$flyt" />
+            <Label alignment="CENTER" layoutX="60.0" layoutY="64.0" prefHeight="51.0" prefWidth="379.0" text="FLYT PAKKE SIMULATOR" underline="true">
                <font>
                   <Font name="System Bold" size="31.0" />
                </font>
             </Label>
+            <Label alignment="CENTER" layoutX="58.0" layoutY="68.0" opacity="0.3" prefHeight="51.0" prefWidth="379.0" text="FLYT PAKKE SIMULATOR" underline="true">
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="123.0" fitWidth="132.0" layoutX="312.0" layoutY="164.0" opacity="0.1">
+               <image>
+                  <Image url="@../../Icons/Flyt_Pakke_Scene/shipped.png" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
     </children>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -94,7 +95,10 @@
                </image>
             </ImageView>
             <Label layoutX="41.0" layoutY="527.0" text="Forsendelses ID: " />
-            <Button fx:id="printKnap" layoutX="428.0" layoutY="575.0" mnemonicParsing="false" text="Print" />
+            <Button fx:id="printKnap" layoutX="428.0" layoutY="575.0" mnemonicParsing="false" style="-fx-focus-color: limegreen; -fx-background-radius: 10; -fx-body-color: linear-gradient(to bottom right, #FFFFFF, #696969);" text="Print">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
             <Label fx:id="forsendelsesID" layoutX="131.0" layoutY="527.0" prefHeight="17.0" prefWidth="173.0" />
             <Box depth="100" height="20.0" layoutX="116.0" layoutY="442.0" width="125.0" />
             <Label fx:id="stregkode" alignment="CENTER" layoutX="57.0" layoutY="428.0" prefHeight="17.0" prefWidth="117.0">

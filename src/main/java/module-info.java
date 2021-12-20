@@ -2,6 +2,7 @@ module tat.trackandtrace {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires java.desktop;
 
 
     opens Domaene.Controller to javafx.fxml;
