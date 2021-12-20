@@ -99,7 +99,7 @@ public class DBUtils {
         udskriv();
     }
 
-    // Flyt pakke simulator funktionen
+    //Flyt pakke simulator funktionen
     public String flytPakke(String tatId, String lokation){
         String sqlCheckAll = "SELECT * FROM Lokation WHERE TatID = ? AND Adresse = ?";
         String sqlCheckID = "SELECT * FROM Lokation WHERE TatID = ?";
@@ -135,7 +135,8 @@ public class DBUtils {
         return pakkeStatus;
     }
 
-    //Track and trace ID printes i konsol ved oprettelse af ny label
+    //Track and trace ID printes i konsol ved oprettelse af ny label //TODO Se her
+    //Denne funktion er en del af simuleringen.
     public void udskriv() throws SQLException {
         String sql = "SELECT (TatID) FROM Label ORDER BY TatID DESC LIMIT 1";
         Connection conn = DriverManager.getConnection(URL);
