@@ -4,19 +4,21 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import tat.DB.DBUtils;
 
 import java.sql.SQLException;
 
-public class MedarbejderController {
+public class Medarbejder {
 
     @FXML
     private TextField medarbejderNr;
     @FXML
     private Label forkertLogin;
     private DBUtils dbUtils = new DBUtils();
+    private SceneSkift skift = new SceneSkift();
 
     public void tilbageKnap(ActionEvent event){
-        dbUtils.skiftScene(event, "Menu_Scene.fxml");
+        skift.skiftScene(event, "Menu_Scene.fxml");
     }
 
     public void loginKnap(ActionEvent event){

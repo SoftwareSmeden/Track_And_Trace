@@ -1,12 +1,7 @@
-package tat.Controller;
+package tat.DB;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.stage.Stage;
+import tat.Controller.SceneSkift;
 import tat.Skabeloner.PakkeLabel;
 import java.io.*;
 import java.sql.*;
@@ -15,48 +10,8 @@ import java.util.ArrayList;
 public class DBUtils {
 
     private final String URL = "jdbc:sqlite:E://IntelliJ Projects/TrackAndTrace/src/main/java/database/TATDB.db";
+    private SceneSkift skift = new SceneSkift();
     private ArrayList<PakkeLabel> liste = new ArrayList<>();
-
-    public void skiftScene(ActionEvent event, String fxmlFile) {
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(DBUtils.class.getResource(fxmlFile));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setResizable(false);
-        stage.setScene(new
-        Scene(root));
-        stage.show();
-}
-
-    public void skiftSceneListe(ActionEvent event, String fxmlFile, ArrayList<PakkeLabel> list, int controllerValg) {
-        Parent root = null;
-        if (list != null) {
-            try {
-                FXMLLoader loader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
-                root = loader.load();
-                //Overfør listens information til næste scene
-                if(controllerValg == 1){
-                    LabelController lc = loader.getController();
-                    lc.visPakkeLabel(list);
-                    lc.printKnap(list);
-                } else if(controllerValg == 2){
-                    KundeController kc = loader.getController();
-                    kc.pakkeInfo(list);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setResizable(false);
-        stage.setScene(new
-        Scene(root));
-        stage.show();
-    }
-
 
     public String login(ActionEvent event, String ID, int valg) throws SQLException {
         String status = "";
@@ -67,7 +22,7 @@ public class DBUtils {
             preStmt.setString(1, ID);
             ResultSet rs = preStmt.executeQuery();
             if (rs.next()) {
-                skiftScene(event,"Opret_Label_Scene.fxml");
+                skift.skiftScene(event,"Opret_Label_Scene.fxml");
             }else{
                 status = "Medarbejder nummer findes ikke";
             }
@@ -94,7 +49,7 @@ public class DBUtils {
                 }
                 stmt.close();
                 resSet.close();
-                skiftSceneListe(event,"Kunde_PakkeInfo_Scene.fxml",liste, 2);
+                skift.skiftSceneListe(event,"Kunde_PakkeInfo_Scene.fxml",liste, 2);
             }
             conn.close();
             preStmt.close();
@@ -107,7 +62,7 @@ public class DBUtils {
             preStmt.setString(1, ID);
             ResultSet rs = preStmt.executeQuery();
             if (rs.next()) {
-                skiftScene(event,"OpdaterScene.fxml");
+                skift.skiftScene(event,"OpdaterScene.fxml");
             }
             conn.close();
             preStmt.close();
@@ -150,7 +105,7 @@ public class DBUtils {
         pl.getModt().setTelefonNr(mtMobil);
         pl.getModt().setEmail(mtEmail);
         liste.add(pl);
-        skiftSceneListe(event, "PakkeLabel_Scene.fxml", liste,1);
+        skift.skiftSceneListe(event, "PakkeLabel_Scene.fxml", liste,1);
     }
 
     public String flytPakke(String tatId, String lokation){

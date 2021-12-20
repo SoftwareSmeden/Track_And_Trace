@@ -4,11 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import tat.DB.DBUtils;
 import tat.Skabeloner.PakkeLabel;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class KundeController {
+public class Kunde {
 
     //KundeLoginScene
     @FXML
@@ -20,9 +21,10 @@ public class KundeController {
     @FXML
     private Label pakkeStatus_1, pakkeStatus_2, pakkeStatus_3, pakkeStatus_4, pakkeStatus_5, pakkeStatus_6, pakkeStatus_7, pakkeStatus_8, pakkeStatus_9, pakkeStatus_10, pakkeStatus_11, pakkeStatus_12;
     private DBUtils dbUtils = new DBUtils();
+    private SceneSkift skift = new SceneSkift();
 
     public void tilbageKnap(ActionEvent event){
-        dbUtils.skiftScene(event, "Menu_Scene.fxml");
+        skift.skiftScene(event, "Menu_Scene.fxml");
     }
 
     public void findPakkeKnap(ActionEvent event){
@@ -39,7 +41,7 @@ public class KundeController {
     }
 
     public void afslutKnap(ActionEvent event){
-        dbUtils.skiftScene(event,"Kunde_Login_Scene.fxml");
+        skift.skiftScene(event,"Kunde_Login_Scene.fxml");
     }
 
     //Kunde_PakkeInfo_Scene

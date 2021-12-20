@@ -3,11 +3,10 @@ package tat.Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import tat.DB.DBUtils;
 import tat.Skabeloner.PakkeLabel;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-public class LabelController {
+public class Label {
 
     //Opret label Scene
     @FXML
@@ -52,25 +51,25 @@ public class LabelController {
     @FXML
     private TextField modtagerEmail;
     @FXML
-    private Label infoTekst;
+    private javafx.scene.control.Label infoTekst;
     @FXML
-    private Label forkertIndtastning;
+    private javafx.scene.control.Label forkertIndtastning;
 
     //PakkeLabel
     @FXML
-    private Label virkNavn, virkAdresse, virkPostBy, virkTelefon, dato, mtNavn, mtAdresse, mtPostBy, mtTelefon, forsendelsesID, stregkode;
+    private javafx.scene.control.Label virkNavn, virkAdresse, virkPostBy, virkTelefon, dato, mtNavn, mtAdresse, mtPostBy, mtTelefon, forsendelsesID, stregkode;
     @FXML
     private Button printKnap;
     @FXML
     private ImageView glsLogo, postnordLogo, afhentLogo;
-
     private final LocalDate localDate = LocalDate.now();
     private DBUtils dbUtils = new DBUtils();
+    private SceneSkift skift = new SceneSkift();
     private PakkeLabel pl = new PakkeLabel();
     private Random ran = new Random();
 
     public void tilbageKnap(ActionEvent event){
-        dbUtils.skiftScene(event, "Menu_Scene.fxml");
+        skift.skiftScene(event, "Menu_Scene.fxml");
     }
 
     //Denne knap tilhører PakkeLabel Scenen
@@ -79,7 +78,7 @@ public class LabelController {
             try {
                 System.out.println("Label printes til .txt fil"); //TODO Konsol tjek
                 pl.opretLabel(liste);
-                dbUtils.skiftScene(event,"Opret_Label_Scene.fxml");
+                skift.skiftScene(event,"Opret_Label_Scene.fxml");
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tat.Controller.MenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tat.Controller.Menu">
    <children>
       <AnchorPane prefHeight="625.0" prefWidth="500.0">
          <children>
             <Button fx:id="VirksomhedKnap" layoutX="57.0" layoutY="362.0" mnemonicParsing="false" onAction="#virksomhedKnap" prefHeight="160.0" prefWidth="160.0" style="-fx-background-radius: 360;" text="VIRKSOMHED" />
-            <Button fx:id="KundeKnap" layoutX="283.0" layoutY="362.0" mnemonicParsing="false" onAction="#kundeKnap" prefHeight="160.0" prefWidth="160.0" style="-fx-background-radius: 360;" text="KUNDE" />
-            <Button fx:id="flytPakkeKnap" layoutX="158.0" layoutY="125.0" mnemonicParsing="false" onAction="#flytPakkeKnap" prefHeight="160.0" prefWidth="160.0" style="-fx-background-radius: 360;" text="FLYT PAKKE" />
+            <Button fx:id="KundeKnap" layoutX="288.0" layoutY="362.0" mnemonicParsing="false" onAction="#kundeKnap" prefHeight="160.0" prefWidth="160.0" style="-fx-background-radius: 360;" text="KUNDE" />
+            <Button fx:id="flytPakkeKnap" layoutX="170.0" layoutY="153.0" mnemonicParsing="false" onAction="#flytPakkeKnap" prefHeight="160.0" prefWidth="160.0" style="-fx-background-radius: 360;" text="FLYT PAKKE - SIMULATOR" />
+            <Label alignment="CENTER" layoutX="151.0" layoutY="41.0" prefHeight="49.0" prefWidth="197.0" text="MENU">
+               <font>
+                  <Font name="System Bold" size="37.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

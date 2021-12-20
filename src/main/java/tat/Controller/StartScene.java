@@ -9,14 +9,14 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class StartController implements Initializable {
+public class StartScene implements Initializable {
 
     @FXML
     private ImageView box;
-    private DBUtils dbUtils = new DBUtils();
+    private SceneSkift skift = new SceneSkift();
 
     public void startKnap(ActionEvent event) {
-        dbUtils.skiftScene(event,"Menu_Scene.fxml");
+        skift.skiftScene(event,"Menu_Scene.fxml");
     }
 
     @Override

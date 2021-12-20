@@ -5,9 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import tat.DB.DBUtils;
 
-public class FlytPakkeController {
-    DBUtils dbUtils = new DBUtils();
+public class FlytPakke {
 
     @FXML
     private TextField trackAndTraceNr;
@@ -15,6 +15,8 @@ public class FlytPakkeController {
     private Label pakkeStatus;
     @FXML
     private RadioButton postcentral_1, postcentral_2, postcentral_3, paaLastbil, leveret;
+    private DBUtils dbUtils = new DBUtils();
+    private SceneSkift skift = new SceneSkift();
 
     public void flytPakkeKnap(){
         String lokation = "";
@@ -37,6 +39,6 @@ public class FlytPakkeController {
     }
 
     public void tilbageKnap(ActionEvent event){
-        dbUtils.skiftScene(event, "Menu_Scene.fxml");
+        skift.skiftScene(event, "Menu_Scene.fxml");
     }
 }

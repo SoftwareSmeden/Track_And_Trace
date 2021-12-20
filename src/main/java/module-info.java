@@ -8,4 +8,6 @@ module tat.trackandtrace {
     exports tat.Controller;
     exports tat.Skabeloner;
     opens tat.Skabeloner to javafx.fxml;
+    exports tat.DB;
+    opens tat.DB to javafx.fxml;
 }
