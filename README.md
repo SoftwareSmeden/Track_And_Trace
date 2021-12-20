@@ -1,5 +1,12 @@
 # Track And Trace
 <details close>
+<summary>Domæne Model</summary>
+<br>
+
+<img width="425" alt="Domæne Model" src="https://user-images.githubusercontent.com/89922905/146827069-0bf8f6d5-ab93-4e46-ad01-2bca9c15107c.png">
+<details close>
+
+<details close>
 <summary>Use-Case 1 - Virksomhed</summary>
 <br>  
   
