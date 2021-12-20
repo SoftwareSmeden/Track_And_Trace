@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import Domaene.DB.DBUtils;
 import Domaene.Skabeloner.PakkeLabel;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -91,7 +92,7 @@ public class Label {
         return text.matches(emailRegex);
     }
 
-    public void opretLabelKnap(ActionEvent event) throws IOException {
+    public void opretLabelKnap(ActionEvent event) throws IOException, SQLException {
         String fragt = "";
         String tjekStatus = "Udfyld alle felter";
         if (gls.isSelected()){

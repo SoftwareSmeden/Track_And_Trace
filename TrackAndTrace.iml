@@ -6,6 +6,16 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Icons" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Icons/Flyt_Pakke_Scene" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Icons/Kunde_Login_Scene" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Icons/Kunde_PakkeInfo_Scene" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Icons/Medarb_login_Scene" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Icons/Menu_Scene" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Icons/Opret_Label_Scene" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Icons/PakkeLabel_Scene" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Icons/Stage" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources/Icons/Start_Scene" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

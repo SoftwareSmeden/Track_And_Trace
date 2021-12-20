@@ -55,11 +55,26 @@
                <toggleGroup>
                   <ToggleGroup fx:id="flyt" />
                </toggleGroup>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </RadioButton>
-            <RadioButton fx:id="postcentral_2" layoutX="94.0" layoutY="371.0" mnemonicParsing="false" style="-fx-focus-color: red;" text="Postcentral 2" toggleGroup="$flyt" />
-            <RadioButton fx:id="postcentral_3" layoutX="222.0" layoutY="328.0" mnemonicParsing="false" style="-fx-focus-color: red;" text="Postcentral 3" toggleGroup="$flyt" />
-            <RadioButton fx:id="paaLastbil" layoutX="222.0" layoutY="371.0" mnemonicParsing="false" text="På Lastbil" toggleGroup="$flyt" />
-            <RadioButton fx:id="leveret" layoutX="358.0" layoutY="328.0" mnemonicParsing="false" style="-fx-focus-color: green;" text="Leveret" toggleGroup="$flyt" />
+            <RadioButton fx:id="postcentral_2" layoutX="94.0" layoutY="371.0" mnemonicParsing="false" style="-fx-focus-color: red;" text="Postcentral 2" toggleGroup="$flyt">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="postcentral_3" layoutX="222.0" layoutY="328.0" mnemonicParsing="false" style="-fx-focus-color: red;" text="Postcentral 3" toggleGroup="$flyt">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="paaLastbil" layoutX="222.0" layoutY="371.0" mnemonicParsing="false" text="På Lastbil" toggleGroup="$flyt">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="leveret" layoutX="358.0" layoutY="328.0" mnemonicParsing="false" style="-fx-focus-color: green;" text="Leveret" toggleGroup="$flyt">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></RadioButton>
             <Label alignment="CENTER" layoutX="60.0" layoutY="64.0" prefHeight="51.0" prefWidth="379.0" text="FLYT PAKKE SIMULATOR" underline="true">
                <font>
                   <Font name="System Bold" size="31.0" />

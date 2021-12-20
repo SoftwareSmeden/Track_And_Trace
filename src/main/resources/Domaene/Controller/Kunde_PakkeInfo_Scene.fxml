@@ -26,7 +26,10 @@
             <Button fx:id="afslutKnap" layoutX="200.0" layoutY="492.0" mnemonicParsing="false" onAction="#afslutKnap" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 100; -fx-body-color: linear-gradient(to bottom right, #FFFFFF, #696969); -fx-focus-color: limegreen;" text="Afslut">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
             <Label fx:id="infoLabelDinPakke" alignment="CENTER" layoutX="100.0" layoutY="36.0" prefHeight="30.0" prefWidth="300.0" text="DIN PAKKE" underline="true">
                <font>
                   <Font name="System Bold" size="38.0" />

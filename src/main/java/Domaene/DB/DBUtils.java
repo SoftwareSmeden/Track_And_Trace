@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class DBUtils {
 
-    private final String URL = "jdbc:sqlite:D://IntelliJ Projects/TrackAndTrace/src/main/java/database/TATDB.db";
+    private final String URL = "jdbc:sqlite:E://IntelliJ Projects/TrackAndTrace/src/main/java/database/TATDB.db";
     private SceneSkift skift = new SceneSkift();
     private ArrayList<PakkeLabel> liste = new ArrayList<>();
 
@@ -59,7 +59,7 @@ public class DBUtils {
     }
 
     //Der skrives til databasen samtidig med at der oprettes en liste, som sendes videre til en ny scene.
-    public void labelTabelDB(ActionEvent event, String afFirmanavn, String afAdresse, String afPostnummer, String afBy, String afTelefon, String afCVR, String mtFornavn, String mtEfternavn, String mtAdresse, String mtPostnummer, String mtBy, String mtMobil, String mtEmail, String fragt) throws IOException {
+    public void labelTabelDB(ActionEvent event, String afFirmanavn, String afAdresse, String afPostnummer, String afBy, String afTelefon, String afCVR, String mtFornavn, String mtEfternavn, String mtAdresse, String mtPostnummer, String mtBy, String mtMobil, String mtEmail, String fragt) throws IOException, SQLException {
         String sqlLabel = "INSERT INTO Label (Af_Firmanavn, Af_Adresse, Af_Postnummer, Af_By, Af_Telefon, Af_CVR, Fragt, Mt_Fornavn, Mt_Efternavn, Mt_Adresse, Mt_Postnummer, Mt_By, Mt_Telefon, Mt_Email) VALUES ('"+afFirmanavn+"','"+afAdresse+"','"+afPostnummer+"','"+afBy+"','"+afTelefon+"','"+afCVR+"','"+fragt+"','"+mtFornavn+"','"+mtEfternavn+"','"+mtAdresse+"','"+mtPostnummer+"','"+mtBy+"','"+mtMobil+"','"+mtEmail+"')";
         String sqlTatID = "INSERT INTO Lokation (TatID) SELECT (TatID) FROM Label ORDER BY TatID DESC LIMIT 1";
         String sqlLokation = "UPDATE Lokation SET Adresse = 'Femøvej 2 4700 Næstved', Dato = strftime('%d/%m/%Y','now'), Tid = time('now','localtime') WHERE TatID = (SELECT max(TatID) FROM Lokation)";
@@ -95,6 +95,8 @@ public class DBUtils {
         pl.getModt().setEmail(mtEmail);
         liste.add(pl);
         skift.skiftSceneListe(event, "PakkeLabel_Scene.fxml", liste,1);
+
+        udskriv();
     }
 
     // Flyt pakke simulator funktionen
@@ -131,5 +133,19 @@ public class DBUtils {
             e.printStackTrace();
         }
         return pakkeStatus;
+    }
+
+    //Track and trace ID printes i konsol ved oprettelse af ny label
+    public void udskriv() throws SQLException {
+        String sql = "SELECT (TatID) FROM Label ORDER BY TatID DESC LIMIT 1";
+        Connection conn = DriverManager.getConnection(URL);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+        if (rs.next()){
+            System.out.println("Track and trace ID: " + rs.getString("TatID"));
+        }
+        conn.close();
+        stmt.close();
+        rs.close();
     }
 }
