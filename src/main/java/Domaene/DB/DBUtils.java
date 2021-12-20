@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class DBUtils {
 
-    private final String URL = "jdbc:sqlite:E://IntelliJ Projects/TrackAndTrace/src/main/java/database/TATDB.db";
+    private final String URL = "jdbc:sqlite:D://IntelliJ Projects/TrackAndTrace/src/main/java/database/TATDB.db";
     private SceneSkift skift = new SceneSkift();
     private ArrayList<PakkeLabel> liste = new ArrayList<>();
 
