@@ -1,4 +1,4 @@
-package tat.Skabeloner;
+package Domaene.Skabeloner;
 
 public class Modtager {
 

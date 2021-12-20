@@ -4,10 +4,10 @@ module tat.trackandtrace {
     requires java.sql;
 
 
-    opens tat.Controller to javafx.fxml;
-    exports tat.Controller;
-    exports tat.Skabeloner;
-    opens tat.Skabeloner to javafx.fxml;
-    exports tat.DB;
-    opens tat.DB to javafx.fxml;
+    opens Domaene.Controller to javafx.fxml;
+    exports Domaene.Controller;
+    exports Domaene.Skabeloner;
+    opens Domaene.Skabeloner to javafx.fxml;
+    exports Domaene.DB;
+    opens Domaene.DB to javafx.fxml;
 }

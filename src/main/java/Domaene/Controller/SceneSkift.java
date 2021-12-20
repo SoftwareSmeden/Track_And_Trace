@@ -1,4 +1,4 @@
-package tat.Controller;
+package Domaene.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -6,12 +6,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import tat.Skabeloner.PakkeLabel;
+import Domaene.Skabeloner.PakkeLabel;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class SceneSkift {
 
+    //Almin. sceneskift uden dataflytning
     public void skiftScene(ActionEvent event, String fxmlFile) {
         Parent root = null;
         try {
@@ -25,6 +26,7 @@ public class SceneSkift {
         stage.show();
     }
 
+    //Sceneskift funktion, der flytter data fra en scene til en anden
     public void skiftSceneListe(ActionEvent event, String fxmlFile, ArrayList<PakkeLabel> list, int controllerValg) {
         Parent root = null;
         if (list != null) {

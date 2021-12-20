@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tat.Controller.Medarbejder">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Domaene.Controller.Medarbejder">
    <children>
       <AnchorPane prefHeight="625.0" prefWidth="500.0">
          <children>
-            <Button fx:id="tilbageKnap" layoutX="423.0" layoutY="580.0" mnemonicParsing="false" onAction="#tilbageKnap" text="Tilbage" />
-            <Button fx:id="loginKnap" layoutX="227.0" layoutY="313.0" mnemonicParsing="false" onAction="#loginKnap" text="Login" />
             <TextField fx:id="medarbejderNr" layoutX="175.0" layoutY="241.0" promptText="Medarbejder nummer" />
+            <Button fx:id="loginKnap" layoutX="227.0" layoutY="313.0" mnemonicParsing="false" onAction="#loginKnap" text="Login" />
+            <Button fx:id="tilbageKnap" layoutX="423.0" layoutY="580.0" mnemonicParsing="false" onAction="#tilbageKnap" text="Tilbage" />
             <Label layoutX="161.0" layoutY="195.0" prefHeight="17.0" prefWidth="178.0" text="Indtast dit medarbejder nummer" />
             <Label fx:id="forkertLogin" alignment="CENTER" layoutX="117.0" layoutY="285.0" prefHeight="17.0" prefWidth="266.0" textFill="RED" />
          </children>

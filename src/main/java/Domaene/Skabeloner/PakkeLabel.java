@@ -1,4 +1,4 @@
-package tat.Skabeloner;
+package Domaene.Skabeloner;
 
 import java.io.*;
 import java.time.LocalDate;

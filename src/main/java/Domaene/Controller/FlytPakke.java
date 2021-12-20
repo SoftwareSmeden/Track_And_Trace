@@ -1,11 +1,11 @@
-package tat.Controller;
+package Domaene.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import tat.DB.DBUtils;
+import Domaene.DB.DBUtils;
 
 public class FlytPakke {
 

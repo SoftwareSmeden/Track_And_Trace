@@ -1,4 +1,4 @@
-package tat.Controller;
+package Domaene.Controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -1,8 +1,8 @@
-package tat.DB;
+package Domaene.DB;
 
 import javafx.event.ActionEvent;
-import tat.Controller.SceneSkift;
-import tat.Skabeloner.PakkeLabel;
+import Domaene.Controller.SceneSkift;
+import Domaene.Skabeloner.PakkeLabel;
 import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;

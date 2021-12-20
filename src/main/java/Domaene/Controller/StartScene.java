@@ -1,4 +1,4 @@
-package tat.Controller;
+package Domaene.Controller;
 
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;

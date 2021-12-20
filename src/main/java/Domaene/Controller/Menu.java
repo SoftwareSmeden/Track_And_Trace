@@ -1,7 +1,7 @@
-package tat.Controller;
+package Domaene.Controller;
 
 import javafx.event.ActionEvent;
-import tat.DB.DBUtils;
+import Domaene.DB.DBUtils;
 
 public class Menu {
 

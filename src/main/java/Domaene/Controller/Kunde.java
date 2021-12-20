@@ -1,11 +1,11 @@
-package tat.Controller;
+package Domaene.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import tat.DB.DBUtils;
-import tat.Skabeloner.PakkeLabel;
+import Domaene.DB.DBUtils;
+import Domaene.Skabeloner.PakkeLabel;
 import java.sql.SQLException;
 import java.util.ArrayList;
 

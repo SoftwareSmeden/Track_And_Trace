@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Domaene.Controller.Label">
+   <children>
+      <AnchorPane prefHeight="625.0" prefWidth="500.0">
+         <children>
+            <TextField fx:id="afsenderFirmanavn" layoutX="111.0" layoutY="156.0" promptText="Firmanavn" />
+            <TextField fx:id="afsenderAdresse" layoutX="111.0" layoutY="212.0" promptText="Adresse" />
+            <TextField fx:id="afsenderPostnummer" layoutX="111.0" layoutY="268.0" promptText="Postnummer" />
+            <TextField fx:id="afsenderBy" layoutX="111.0" layoutY="324.0" promptText="By" />
+            <TextField fx:id="afsenderTelefon" layoutX="111.0" layoutY="379.0" promptText="Telefon" />
+            <TextField fx:id="afsenderCVR" layoutX="111.0" layoutY="431.0" promptText="CVR" />
+            <RadioButton fx:id="gls" layoutX="375.0" layoutY="145.0" mnemonicParsing="false" selected="true" text="GLS">
+               <toggleGroup>
+                  <ToggleGroup fx:id="fragt" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="postnord" layoutX="375.0" layoutY="177.0" mnemonicParsing="false" text="Postnord" toggleGroup="$fragt" />
+            <RadioButton fx:id="afhentning" layoutX="375.0" layoutY="209.0" mnemonicParsing="false" text="Afhentning" toggleGroup="$fragt" />
+            <TextField fx:id="modtagerFornavn" layoutX="544.0" layoutY="165.0" promptText="Fornavn" />
+            <TextField fx:id="modtagerEfternavn" layoutX="544.0" layoutY="221.0" promptText="Efternavn" />
+            <TextField fx:id="modtagerAdresse" layoutX="544.0" layoutY="277.0" promptText="Adresse" />
+            <TextField fx:id="modtagerPostnummer" layoutX="544.0" layoutY="332.0" promptText="Postnummer" />
+            <TextField fx:id="modtagerBy" layoutX="544.0" layoutY="387.0" promptText="By" />
+            <TextField fx:id="modtagerMobil" layoutX="544.0" layoutY="442.0" promptText="Mobil" />
+            <TextField fx:id="modtagerEmail" layoutX="544.0" layoutY="496.0" promptText="Email" />
+            <Button fx:id="opretKnap" layoutX="342.0" layoutY="539.0" mnemonicParsing="false" onAction="#opretLabelKnap" prefHeight="32.0" prefWidth="109.0" text="Opret" />
+            <Button fx:id="tilbageKnap" layoutX="716.0" layoutY="571.0" mnemonicParsing="false" onAction="#tilbageKnap" text="Tilbage" />
+            <Label layoutX="342.0" layoutY="32.0" text="Opret label">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="570.0" layoutY="96.0" text="Modtager">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="142.0" layoutY="96.0" text="Afsender">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="375.0" layoutY="96.0" text="Fragt">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="infoTekst" alignment="CENTER" layoutX="298.0" layoutY="508.0" prefHeight="17.0" prefWidth="197.0" />
+            <Label fx:id="forkertIndtastning" alignment="CENTER" layoutX="294.0" layoutY="508.0" prefHeight="17.0" prefWidth="197.0" textFill="RED" />
+            <Label layoutX="112.0" layoutY="137.0" prefHeight="17.0" prefWidth="149.0" text="Firmanavn">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="192.0" prefHeight="17.0" prefWidth="149.0" text="Adresse">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="249.0" prefHeight="17.0" prefWidth="149.0" text="Postnummer">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="303.0" prefHeight="17.0" prefWidth="149.0" text="By">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="113.0" layoutY="358.0" prefHeight="17.0" prefWidth="149.0" text="Telefon">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="413.0" prefHeight="17.0" prefWidth="149.0" text="CVR">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="545.0" layoutY="145.0" prefHeight="17.0" prefWidth="149.0" text="Fornavn">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="545.0" layoutY="200.0" prefHeight="17.0" prefWidth="149.0" text="Eftenavn">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="545.0" layoutY="257.0" prefHeight="17.0" prefWidth="149.0" text="Adresse">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="545.0" layoutY="312.0" prefHeight="17.0" prefWidth="149.0" text="Postnummer">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="545.0" layoutY="367.0" prefHeight="17.0" prefWidth="149.0" text="By">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="545.0" layoutY="422.0" prefHeight="17.0" prefWidth="149.0" text="Mobil">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="545.0" layoutY="477.0" prefHeight="17.0" prefWidth="149.0" text="Email">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
