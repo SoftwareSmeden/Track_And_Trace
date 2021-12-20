@@ -37,19 +37,9 @@ Denne use-case er til simulering af én pakke kan flyttes til en ny lokation.
 ![TAT_Ottende_Scene_Simulator](https://user-images.githubusercontent.com/89922905/146821459-032a93c5-ad44-407f-a6c8-85e013d814c9.png)
 
 </details>
-
+____________________________________________    
 <details close>
-<summary>Domæne Model</summary>
-<br>
-  
-Vores Domæne model til track and trace systemet.
-
-<img width="425" alt="Domæne Model" src="https://user-images.githubusercontent.com/89922905/146827069-0bf8f6d5-ab93-4e46-ad01-2bca9c15107c.png">
-  
-<details close>
-    
-<details close>
-<summary>System Sekvensdiagram</summary>
+<summary>System Sekvensdiagrammer</summary>
 <br>  
   
 System sekvensdiagrammer for alle tre aktører.  
@@ -59,6 +49,10 @@ System sekvensdiagrammer for alle tre aktører.
 ![SSD Flyt Pakke](https://user-images.githubusercontent.com/89922905/146827873-d69a74b1-031d-41ee-8852-b3221b99b244.png)  
   
 <details close>  
+____________________________________________   
+
+  
+  
 
 - *SoftwareSmeden* -> [Profile](https://github.com/SoftwareSmeden "SoftwareSmeden")
 - *Fisk810* -> [Profile](https://github.com/fisk810 "Fisk810")
