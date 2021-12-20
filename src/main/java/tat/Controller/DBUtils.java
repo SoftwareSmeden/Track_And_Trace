@@ -29,7 +29,6 @@ public class DBUtils {
         stage.setScene(new
         Scene(root));
         stage.show();
-
 }
 
     public void skiftSceneListe(ActionEvent event, String fxmlFile, ArrayList<PakkeLabel> list, int controllerValg) {
@@ -75,7 +74,6 @@ public class DBUtils {
             conn.close();
             preStmt.close();
             rs.close();
-
 
         } else if (valg == 2) {
             String sql = "SELECT * FROM Lokation WHERE TatID = ?";
@@ -136,7 +134,6 @@ public class DBUtils {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
         PakkeLabel pl = new PakkeLabel();
         pl.getVirk().setFirmanavn(afFirmanavn);
         pl.getVirk().setAdresse(afAdresse);

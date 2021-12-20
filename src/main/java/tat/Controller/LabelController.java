@@ -95,7 +95,6 @@ public class LabelController {
         }else if (afhentning.isSelected()){
             fragt = "Afhentning";
         }
-
         if (!(afsenderFirmanavn.getText().trim().isEmpty()      ||
                 afsenderAdresse.getText().trim().isEmpty()      ||
                 afsenderPostnummer.getText().trim().isEmpty()   ||
