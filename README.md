@@ -1,4 +1,8 @@
 # Track And Trace
+
+//Projekt beskrivelse her...
+
+# Use-Case
 <details close>
 <summary>Use-Case 1 - Virksomhed</summary>
 <br>  
@@ -10,7 +14,6 @@ Denne use-case er til for virksomhedens medarbejder, hvor de kan oprette en labe
 ![TAT_Tredje_Scene_Virksomhed](https://user-images.githubusercontent.com/89922905/146820834-a0b45b88-13f4-4681-91c5-f9d2bf8a6490.png)
 ![TAT_Fjerde_Scene_Virksomhed](https://user-images.githubusercontent.com/89922905/146820865-9c1900fd-8bba-403e-93bd-194647509840.png)
 ![TAT_Femte_Scene_Virksomhed](https://user-images.githubusercontent.com/89922905/146820873-b7a184cc-c122-4156-9db7-8a293ddeb6b3.png)
-
 </details>
  
 <details close>
@@ -23,7 +26,6 @@ Denne use-case er for kunden, hvor til de kan søge efter deres pakke med et tra
 ![TAT_Anden_Scene](https://user-images.githubusercontent.com/89922905/146821036-e3b84b33-b1fc-4003-8e93-93dc2ad8e1a7.png)
 ![TAT_Sjette_Scene_Kunde](https://user-images.githubusercontent.com/89922905/146821059-512acef7-cbee-4520-9a5b-00115277f8e4.png)
 ![TAT_Syvende_Scene_Kunde](https://user-images.githubusercontent.com/89922905/146821068-2f3c90ed-a6a2-48ec-a50b-9f345a97adba.png)
-
 </details>
 
 <details close>
@@ -35,25 +37,33 @@ Denne use-case er til simulering af én pakke kan flyttes til en ny lokation.
 ![TAT_Frste_Scene](https://user-images.githubusercontent.com/89922905/146821447-566b75d4-7204-42e3-8177-fb75b6a07b7b.png)
 ![TAT_Anden_Scene](https://user-images.githubusercontent.com/89922905/146821454-48a59545-d155-4397-bfd7-69801f46d11d.png)
 ![TAT_Ottende_Scene_Simulator](https://user-images.githubusercontent.com/89922905/146821459-032a93c5-ad44-407f-a6c8-85e013d814c9.png)
-
 </details>
-____________________________________________    
+
+# Domæne Model 
 <details close>
 <summary>System Sekvensdiagrammer</summary>
 <br>  
-  
+ 
+<img width="425" alt="Domaene Model" src="https://user-images.githubusercontent.com/89922905/146829524-aafbd104-d693-414d-a52b-56878ae1fdca.png">
+</details>   
+
+# SSD 
+<details close>
+<summary>System Sekvensdiagrammer</summary>
+<br>  
+ 
 System sekvensdiagrammer for alle tre aktører.  
-  
+
 ![SSD Medarbejder](https://user-images.githubusercontent.com/89922905/146827841-26ab9fdc-9775-4566-a3e4-ea718433e85c.png)
 ![SSD Kunde](https://user-images.githubusercontent.com/89922905/146827860-d38885e7-6f05-40d9-bbf7-5bbd59b35ad8.png)
 ![SSD Flyt Pakke](https://user-images.githubusercontent.com/89922905/146827873-d69a74b1-031d-41ee-8852-b3221b99b244.png)  
-  
-<details close>  
-____________________________________________   
+</details> 
 
-  
-  
 
+
+
+
+# Holdet  
 - *SoftwareSmeden* -> [Profile](https://github.com/SoftwareSmeden "SoftwareSmeden")
 - *Fisk810* -> [Profile](https://github.com/fisk810 "Fisk810")
 - *GodeGamleJacob* -> [Profile](https://github.com/GodeGamleJacob "GodeGamleJacob")
