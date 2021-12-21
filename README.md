@@ -2,6 +2,8 @@
 
 //Projekt beskrivelse her...
 
+![GUI - Forside](https://user-images.githubusercontent.com/89922905/146917328-c1b4dbfb-b1c6-40cf-b54c-e721933fbf35.png)
+
 # Use-Case
 <details close>
 <summary>Use-Case 1 - Virksomhed</summary>
