@@ -1,6 +1,13 @@
 # Track And Trace
 
-//Projekt beskrivelse her...
+Dette projekt tager sig af løsningen af vores semesterprojekt.
+Ideen bag er, at der skal håndteres et Track & Trace-program, dette skal kunne simulere flytningen af en pakke, og der skal kunne skrives til, søges i og hentes fra en database.
+Programmet er bygget op om JavaFX og Scenebuilder, og størstedelen af programmet fungerer i en grafisk brugerflade.
+Programmets funktioner er således:
+Der kan som bruger af programmet vælges mellem følgende: Simulator, Kunde og Virksomhed.
+Alt efter valget kan der gøres brug af funktioner til at oprette en pakke og et unikt ID til denne, der kan søges efter en pakke ved hjælp af det unikke ID, og der kan flyttes på en pakke ved hjælp af det unikke ID, der blev oprettet i det éne af valgene.
+Disse data - altså de indskrevne - indsættes i relevante tabeller i en tilhørende database, hvormed man kan tilgå dataene og der kan søges i disse, ved hjælp af programmets funktioner dertil.
+Vi har forsøgt at bygge det op omkring 3-lags-modellen.
 
 ![GUI - Forside](https://user-images.githubusercontent.com/89922905/146917328-c1b4dbfb-b1c6-40cf-b54c-e721933fbf35.png)
 
