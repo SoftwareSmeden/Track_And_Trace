@@ -73,23 +73,23 @@ public class Label {
         skift.skiftScene(event, "Menu_Scene.fxml");
     }
 
-    //Importeret fra Oracle docs
+    //Importeret fra JavaFX docs
     private Boolean tjekBogstaver(String text){
         return !text.matches("[0-9]+");
     }
 
-    //Importeret fra Oracle docs
+    //Importeret fra JavaFX docs
     private Boolean tjekTal(String text, int laengde) {
         return text.matches("[0-9]+") && text.length() == laengde;
     }
 
-    //Importeret fra Oracle docs
+    //Importeret fra JavaFX docs
     private Boolean tjekEmail(String text){
-        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+        String emailTjek = "^[a-zA-Z0-9_+&*-]+(?:\\."+
                 "[a-zA-Z0-9_+&*-]+)*@" +
                 "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
                 "A-Z]{2,7}$";
-        return text.matches(emailRegex);
+        return text.matches(emailTjek);
     }
 
     public void opretLabelKnap(ActionEvent event) throws IOException, SQLException {

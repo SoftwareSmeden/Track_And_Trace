@@ -40,8 +40,8 @@ public class PakkeLabel {
         int barcodeID = ran.nextInt(321231-52152) + 321535;
         int barcodeID2 = ran.nextInt(321231-52152) + 321535;
 
-        File testFil = new File("Label.txt");
-            if (testFil.createNewFile()){
+        File labelPrint = new File("Label.txt");
+            if (labelPrint.createNewFile()){
                 System.out.println("Label oprettet");
             }
         try {

@@ -30,21 +30,19 @@ public class SceneSkift {
     //Overfører listens information til næste scene
     public void skiftSceneListe(ActionEvent event, String fxmlFile, ArrayList<PakkeLabel> list, int controllerValg) {
         Parent root = null;
-        if (list != null) {
-            try {
-                FXMLLoader loader = new FXMLLoader(SceneSkift.class.getResource(fxmlFile));
-                root = loader.load();
-                if(controllerValg == 1){
-                    Label lc = loader.getController();
-                    lc.visPakkeLabel(list);
-                    lc.printKnap(list);
-                } else if(controllerValg == 2){
-                    Kunde kc = loader.getController();
-                    kc.pakkeInfo(list);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
+        try {
+            FXMLLoader loader = new FXMLLoader(SceneSkift.class.getResource(fxmlFile));
+            root = loader.load();
+            if(controllerValg == 1){
+                Label lc = loader.getController();
+                lc.visPakkeLabel(list);
+                lc.printKnap(list);
+            } else if(controllerValg == 2){
+                Kunde kc = loader.getController();
+                kc.pakkeInfo(list);
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setResizable(false);
