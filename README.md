@@ -1,6 +1,15 @@
 # Track And Trace
 
-//Projekt beskrivelse her...
+Dette projekt tager sig af løsningen af vores semesterprojekt.  
+Ideen bag er, at der skal håndteres et Track & Trace-program, dette skal kunne simulere flytningen af en pakke, og der skal kunne skrives til, søges i og hentes fra en database.  
+Programmet er bygget op om JavaFX og Scenebuilder, og størstedelen af programmet fungerer i en grafisk brugerflade.  
+Programmets funktioner er således:  
+Der kan som bruger af programmet vælges mellem følgende: Simulator, Kunde og Virksomhed.  
+Alt efter valget kan der gøres brug af funktioner til at oprette en pakke og et unikt ID til denne, der kan søges efter en pakke ved hjælp af det unikke ID, og der kan flyttes på en pakke ved hjælp af det unikke ID, der blev oprettet i det éne af valgene.  
+Disse data - altså de indskrevne - indsættes i relevante tabeller i en tilhørende database, hvormed man kan tilgå dataene og der kan søges i disse, ved hjælp af programmets funktioner dertil.  
+Vi har forsøgt at bygge det op omkring 3-lags-modellen.  
+
+![GUI - Forside](https://user-images.githubusercontent.com/89922905/146917328-c1b4dbfb-b1c6-40cf-b54c-e721933fbf35.png)
 
 # Use-Case
 <details close>
@@ -41,7 +50,7 @@ Denne use-case er til simulering af én pakke kan flyttes til en ny lokation.
 
 # Domæne Model 
 <details close>
-<summary>System Sekvensdiagrammer</summary>
+<summary>Domæne Model</summary>
 <br>  
  
 <img width="425" alt="Domaene Model" src="https://user-images.githubusercontent.com/89922905/146829524-aafbd104-d693-414d-a52b-56878ae1fdca.png">
@@ -60,6 +69,30 @@ System sekvensdiagrammer for alle tre aktører.
 </details> 
 
 
+# ER Model
+<details close>
+<summary>Relationsdiagram</summary>
+<br>  
+ 
+<img width="287" alt="Relationsdiagram2" src="https://user-images.githubusercontent.com/89922905/146915758-5d11bbc4-1ecd-4cb6-8b69-498a01b31e96.PNG"> 
+<img width="315" alt="ER-Diagram" src="https://user-images.githubusercontent.com/89922905/146914176-5b75b57c-b49c-4122-917e-7f02dc65913f.PNG">
+</details> 
+
+# Interaktionsdiagram
+<details close>
+<summary>Sekvensdiagram</summary>
+<br>  
+ 
+![Interaktionsdiagram - Sekvensdiagram](https://user-images.githubusercontent.com/89922905/146916783-2cd6fd28-cb42-43cd-9c2a-41d605622c1f.png)  
+</details> 
+
+# Design Model
+<details close>
+<summary>Klassediagram</summary>
+<br>  
+ 
+<img width="644" alt="KlasseDiagram" src="https://user-images.githubusercontent.com/89922905/146913561-75d45d6b-98eb-4ddc-8a42-6a904b37f29d.PNG">
+</details>   
 
 
 
