@@ -135,7 +135,7 @@ public class DBUtils {
         return pakkeStatus;
     }
 
-    //Track and trace ID printes i konsol ved oprettelse af ny label //TODO Se her
+    //Track and trace ID printes i konsol ved oprettelse af ny label
     //Denne funktion er en del af simuleringen.
     public void udskriv() throws SQLException {
         String sql = "SELECT (TatID) FROM Label ORDER BY TatID DESC LIMIT 1";
