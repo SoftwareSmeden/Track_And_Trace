@@ -16,6 +16,7 @@ public class Main extends Application {
         stage.setTitle("Track And Trace");
         Image icon = new Image("boks_icon.png");
         stage.getIcons().add(icon);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
